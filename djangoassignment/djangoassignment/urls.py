@@ -21,7 +21,7 @@ from drf_spectacular.views import SpectacularAPIView,SpectacularSwaggerView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/schema/",SpectacularAPIView.as_view(),name="api-docs"),
-    path("api/docs/",SpectacularSwaggerView.as_view(url_name="api-docs")),
+    path("",SpectacularSwaggerView.as_view(url_name="api-docs")),
     path("api/account/",include('account.urls'),name='account-app-urls'),
     path("api/expenses/",include("expenses.urls"),name="expenses-app-urls")
 ]
