@@ -13,7 +13,7 @@ urlpatterns=[
     path("get/expenses/",views.ExpenseRetrieval.as_view(),name="retrieve-expenses"),
     path("update/expense/<int:pk>/",views.ExpenseUpdate.as_view(),name="update-expense"),
     path('delete/expense/<int:pk>/',views.ExpenseDelete.as_view(),name="expense-delete"),
-    path('get/expense/detail/<int:pk>/',views.ExpenseRetrievalDetail.as_view(),name="expense-detail")
+
     
 
 ]

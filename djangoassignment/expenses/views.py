@@ -39,16 +39,6 @@ class ExpenseRetrieval(GenericAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class ExpenseRetrievalDetail(RetrieveAPIView):
-    serializer_class = serializers.ExpenseSerializerRetrieve
-    authentication_classes = [authentication.TokenAuthentication]
-    permission_classes = [permissions.IsAuthenticated,ExpenseUpdatePermission]
-
-    def get_queryset(self):
-        if self.request.user.is_superuser:
-            return Expense.objects.all()
-        else:
-            return Expense.objects.filter(created_by=self.request.user)
 
 
 
